@@ -5,36 +5,29 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compile the Code.........."
-                sh '''#!/bin/bash
+                
 			mvn compile
-		'''
-            }
+		          }
         }
         stage('Test') {
             steps {
                 echo "Testing the Code.........."
-               sh '''#!/bin/bash
                         mvn test
-                '''
-
+               
             }
         }
         stage('Package') {
             steps {
                 echo "Packiging the Code.........."
-               sh '''#!/bin/bash
                         mvn package
-                '''
-
+               
             }
         }
         stage('Install') {
             steps {
                 echo "installing the Code.........."
-                sh '''#!/bin/bash
                         mvn install
-                '''
-
+               
             }
         }
     }
