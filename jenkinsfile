@@ -5,25 +5,25 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compile the Code.........."
-                sh "mvn -Dmaven.test.failure.ignore=true Compile"
+                bash "mvn Compile"
             }
         }
         stage('Test') {
             steps {
                 echo "Testing the Code.........."
-                sh "mvn -Dmaven.test.failure.ignore=true test"
+                bash "mvn test"
             }
         }
         stage('Package') {
             steps {
                 echo "Packiging the Code.........."
-                sh "mvn -Dmaven.test.failure.ignore=true package"
+                bash "mvn -Dmaven.test.failure.ignore=true package"
             }
         }
         stage('Install') {
             steps {
                 echo "installing the Code.........."
-                sh "mvn -Dmaven.test.failure.ignore=true install"
+                bash "mvn -Dmaven.test.failure.ignore=true install"
             }
         }
     }
