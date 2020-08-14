@@ -5,25 +5,25 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "Compile the Code.........."
-                bat "mvn Compile"
+                sh "mvn Compile"
             }
         }
         stage('Test') {
             steps {
                 echo "Testing the Code.........."
-                bat "mvn test"
+                sh "mvn test"
             }
         }
         stage('Package') {
             steps {
                 echo "Packiging the Code.........."
-                bat "mvn package"
+                sh "mvn package"
             }
         }
         stage('Install') {
             steps {
                 echo "installing the Code.........."
-                bat "mvn install"
+                sh "mvn install"
             }
         }
     }
